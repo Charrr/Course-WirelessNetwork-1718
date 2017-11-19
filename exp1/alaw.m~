@@ -12,11 +12,11 @@ for n = 1:len
     if companded(n)>0           % Assign the first bit - the sign bit
         encoded(n, 1) = 1;      % If positive, assign 1
     else
-        encoded(n, 1) = 0;      % If negative, assgin 0
+        encoded(n, 1) = 0;      % If negative, assgin
     end
     for i = 2:8                 % Assign the rest bits - 2nd to 8th
-        binchar = dec2bin(abs(companded(n)), 8);  % Convert the quantised value to binary digits.  
-        encoded(n, i) = str2num(binchar(i));
+        binchar = dec2bin(companded(n));  % Convert the quantised value to binary digits.  
+        encoded(n:i) = str2num(binchar(i));
     end
 end
 
