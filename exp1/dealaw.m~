@@ -3,9 +3,12 @@ function [ output ] = dealaw( input, nor )
 %   nor denotes the normalisation scale in A-law companding.
 
 octave = reshape(input, 8, []);     % Put every 8 digit as a column vector.
+for i=1:
+end
 decoded = bin2dec(strcat(num2str(octave)'))';   % Convert every column (binary) to decimal numbers.
-expanded = compand(decoded, 87.6, 128, 'a/expander');    % Reverse the A-law convertion.
-output = expanded;
+decoded = decoded/128*nor;
+expanded = compand(decoded, 87.6, nor, 'a/expander');    % Reverse the A-law convertion.
+output = octave;
 
 end
 

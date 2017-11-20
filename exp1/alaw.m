@@ -4,7 +4,7 @@ function [ output ] = alaw( input )
 max_of_input = max(input);
 len = length(input);
 compressed = compand(input, 87.6, max_of_input, 'a/compressor');
-compressed = round(compressed * 128 / max_of_input);   % Normalise all the values to (-128,128).
+compressed = round(compressed * 127 / max_of_input);   % Normalise all the values to (-128,128).
 
 encoded = zeros(len, 8);      % Initialise all the 
 
