@@ -1,9 +1,11 @@
-function [ output ] = dealaw( input )
-%	Decode the demodulated signal
-%   Detailed explanation goes here
+function [ output ] = dealaw( input, nor )
+%	Decode the demodulated signal.
+%   nor denotes the normalisation scale in A-law companding.
+
 octave = reshape(input, 8, []);     % Put every 8 digit as a column vector.
 decoded = bin2dec(strcat(num2str(octave)'))';   % Convert every column (binary) to decimal numbers.
-expanded = compand(input, 87.6, max_of_input, 'a/expander');    % Reverse the A-law 
+expanded = compand(decoded, 87.6, 128, 'a/expander');    % Reverse the A-law convertion.
+output = expanded;
 
 end
 

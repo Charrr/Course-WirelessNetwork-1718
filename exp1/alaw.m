@@ -1,7 +1,7 @@
 function [ output ] = alaw( input )
 % Encode the signal by A-law. 
 % Note: both input and output are row vectors
-max_of_input = max(abs(input));
+max_of_input = max(input);
 len = length(input);
 compressed = compand(input, 87.6, max_of_input, 'a/compressor');
 compressed = round(compressed * 128 / max_of_input);   % Normalise all the values to (-128,128).
@@ -20,7 +20,7 @@ for n = 1:len
     end
 end
 
-output = reshape(encoded',[],1)' % Reform the matrix to a sequence of 1s and 0s.
+output = reshape(encoded',[],1)'; % Reform the matrix to a sequence of 1s and 0s.
 
 end
 

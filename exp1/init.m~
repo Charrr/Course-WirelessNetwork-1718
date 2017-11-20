@@ -1,7 +1,7 @@
 f0 = 256;
 dt = 1/16;
 tk = (0:1024)*dt;
-st = sin(2*pi*tk)+cos(pi*tk);   % 1) the ordinary signal
+st = sin(2*pi*tk)+cos(pi*tk);   % 1) The ordinary signal
 max_of_st = max(st);
 % Sf = fft(st);
 % Sfmag = abs(Sf);
@@ -9,3 +9,4 @@ coded = alaw(st);               % 2) encoded by A-law
 modulated = bpsk(coded, f0);    % 3) modulated by BPSK
 demodulated = debpsk(modulated, f0);  % 4) demodulated
 decoded = dealaw(demodulated, max_of_st);  % 5) decoded
+
