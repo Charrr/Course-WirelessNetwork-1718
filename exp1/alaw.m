@@ -3,19 +3,19 @@ function [ output ] = alaw( input )
 % Note: both input and output are row vectors
 max_of_input = max(abs(input));
 len = length(input);
-companded = compand(input, 87.6, max_of_input, 'a/compressor');
-companded = round(companded * 128 / max_of_input);   % Normalise all the values to (-128,128).
+compressed = compand(input, 87.6, max_of_input, 'a/compressor');
+compressed = round(compressed * 128 / max_of_input);   % Normalise all the values to (-128,128).
 
 encoded = zeros(len, 8);      % Initialise all the 
 
 for n = 1:len
-    if companded(n)>0           % Assign the first bit - the sign bit
+    if compressed(n)>0          % Assign the first bit - the sign bit
         encoded(n, 1) = 1;      % If positive, assign 1
     else
         encoded(n, 1) = 0;      % If negative, assgin 0
     end
     for i = 2:8                 % Assign the rest bits - 2nd to 8th
-        binchar = dec2bin(abs(companded(n)), 8);  % Convert the quantised value to binary digits.  
+        binchar = dec2bin(abs(compressed(n)), 8);  % Convert the quantised value to binary digits.  
         encoded(n, i) = str2num(binchar(i));
     end
 end

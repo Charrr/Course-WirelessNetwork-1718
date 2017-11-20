@@ -3,7 +3,7 @@ function [ output ] = bpsk( input, f0 )
 %   f0 denotes the center frequency of the BPSK modulation.
 %   both input and output are row vectors.
 
-fs = 4096;     % Define the sampling rate.
+fs = 65536;     % Define the sampling rate.
 dt = 1/fs;     % Samping time interval.
 len = length(input);
 n = fs/f0;      % For every bit, use n samples for modulation.
