@@ -23,4 +23,3 @@ end
 output = reshape(encoded',[],1)'; % Reform the matrix to a sequence of 1s and 0s.
 
 end
-

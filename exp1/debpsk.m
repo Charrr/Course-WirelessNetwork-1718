@@ -1,7 +1,7 @@
 function [ output ] = debpsk( input, f0 )
 %	Demodulates the modulated signal.
 %   f0 denotes the center frequency of the BPSK modulation.
-%   both input and output are row vectors.
+%   Note: both input and output are row vectors.
 
 fs = 65536;         % Keep the sampling rate consistent with that in modulation.
 n = fs/f0;          % every 1 bit corresponds to n samples.
@@ -19,4 +19,3 @@ s_decided = (s_sampled < 0);                    % Deicide: if positive, the bit 
 output = s_decided;
 
 end
-

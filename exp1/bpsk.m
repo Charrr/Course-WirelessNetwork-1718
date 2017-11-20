@@ -1,7 +1,7 @@
 function [ output ] = bpsk( input, f0 )
 %   Modulates a signal by BPSK
 %   f0 denotes the center frequency of the BPSK modulation.
-%   both input and output are row vectors.
+%   Note: both input and output are row vectors.
 
 fs = 65536;     % Define the sampling rate.
 dt = 1/fs;     % Samping time interval.
@@ -21,16 +21,3 @@ output = cos(2*pi*f0*t + pi*s);
 % end
 % output = cos(2*pi/f0*(1:outlength));
 end
-
-% function [ output ] = BPSK1( input, f0 )
-% %BPSK1 ????
-% %   ????????????????
-% deltaT=1/65536;
-% tk=(0:256)*deltaT;
-% in=input*2-1;
-% s=length(in);
-% carry=cos(2*pi*f0*tk);
-% inputtime=kron(in,ones(1,257));
-% out=repmat(carry,1,s);
-% output=inputtime.*out;
-% end
