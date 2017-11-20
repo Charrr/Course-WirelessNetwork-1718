@@ -11,7 +11,7 @@ n = fs/f0;      % For every bit, use n samples for modulation.
 s = kron(input, ones(1, n));    % Repeat every bit by fs/f0 times so as to match the samples
 t = (1:(len*n))*dt;             % The complete time sequence for modualtion.
 
-output = cos(2*pi*f0*t + pi*s);
+output = cos(2*pi*f0*t + 
 
 % outlength = 1024;
 % input_padded = padding(input,outlength);

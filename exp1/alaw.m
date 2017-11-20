@@ -1,6 +1,6 @@
-function [ encoded ] = alaw( input )
-% Encode the signal by A-law.
-
+function [ output ] = alaw( input )
+% Encode the signal by A-law. 
+% Note: both input and output are row vectors
 max_of_input = max(abs(input));
 len = length(input);
 companded = compand(input, 87.6, max_of_input, 'a/compressor');
@@ -19,6 +19,8 @@ for n = 1:len
         encoded(n, i) = str2num(binchar(i));
     end
 end
+
+output = reshape(encoded',[],1)' % Reform the matrix to a sequence of 1s and 0s.
 
 end
 
