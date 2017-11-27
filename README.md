@@ -1,3 +1,3 @@
 # Course-WirelessNetwork-1718
-EXPERIMENT ONE: SIGNAL TRANSMISSIONS
-EXPERIMENT TWO: DIRECT SEQUENCE SPREAD SPECTRUM TECHNIQUES
+Experiment ONE: Signal Transmissions
+Experiment TWO: Direct Sequence Spread Spectrum Techniques
