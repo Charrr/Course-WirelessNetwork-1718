@@ -2,7 +2,7 @@ function [ output ] = debpsk( input, f0, P )
 %	Demodulates the modulated signal.
 %   ///This file is duplicated from exp1.///
 %   ///Additional parameter P is appended.///
-%   ///P denotes the Pseudonoise sequence.///
+%   ///P denotes the pseudonoise sequence.///
 
 %   f0 denotes the center frequency of the BPSK modulation.
 %   Note: both input and output are row vectors.
