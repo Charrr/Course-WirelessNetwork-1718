@@ -14,12 +14,15 @@ P = kron(P, ones(1,n));     % Interpolate P so that it matches the dimension of 
 s = input .* cos(2*pi*f0*(1:length(input))/fs);  % Multiply by the carrier wave.
 s = s .* P;                                      % Multiply by the PN code.
 
-[b,a] = ellip(4,1/128,128,1/128);                   % Deisgn a low-pass filter.
+wp = 3/fs;
+ws = 300/fs;
+[N, Wp] = ellipord(wp, ws, 1, 40);
+[b, a] = ellip(N, 1, 40, Wp);                   % Deisgn a low-pass filter.
 s_filtered = filter(b,a,s);
 
 figure,
 subplot(2,1,1), plot(s); title('s');
-subplot(2,1,2), plot(s_filtered);
+subplot(2,1,2), plot(s_filtered); title('Point D');
 % --- Point D ---
 
 % Sample and decide.
