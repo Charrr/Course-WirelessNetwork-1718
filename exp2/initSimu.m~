@@ -1,0 +1,10 @@
+% This is the initialisation of the simulation.
+Rb = 1; % data rate 1 bit/s
+gain = 64; % spreading gain 64
+fc = 128; % carrier frequency 128Hz
+
+
+
+mt = [1, 0, 0, 1, 1];   % An arbitrary signal m(t).
+mt_in = kron(mt, ones(1,gain)); % Interpolating the signal before multiplying by the carrier.
+P = 

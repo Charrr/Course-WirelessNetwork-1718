@@ -16,9 +16,9 @@ M = zeros(1,N); % Initialising M, of length 2^n-1
 register = [1, zeros(1,len-1)];
 M(1) = register(1);
 for i = 2:N
-    nextRegister(1:len-1) = register(2:len);
-    nextRegister(len) = mod(sum(seq.*register), 2);
-    register = nextRegister;
+    nextRegister(1:len-1) = register(2:len);        % Shifting.
+    nextRegister(len) = mod(sum(seq.*register), 2); % Modulus 2 plus operaiton.
+    register = nextRegister;                        % Shifting.
     M(i) = register(1);
 end
 
