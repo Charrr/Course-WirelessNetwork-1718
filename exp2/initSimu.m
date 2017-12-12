@@ -18,16 +18,11 @@ sB = bpsk2(sA, fc);
 % --- Point B ---
 figure, plot(sB); title('Point B');
 
-% sC = awgn(sB, 50, 'measured');    % Adding noise.
-sC = sB;                            % Ideally, no noise.
+sC = awgn(sB, 50, 'measured');        % Adding noise.
+% sC = sB;                            % Ideally, no noise.
 % --- Point C ---
 figure, plot(sC); title('Point C');
 
-% --- Point D is within the debpsk function ---
+% --- Point D is within the debpsk2 function ---
 mt_out = debpsk2(sC, fc, Pt);
 figure, plot(mt_out); title('m(t)''');
-
-
-
-
-
