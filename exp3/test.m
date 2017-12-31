@@ -1,4 +1,6 @@
-[X,Y] = meshgrid(1:2:400, 1:2:300);
+ns = [1,2,10:10:100];
+
+[X,Y] = meshgrid(ns, 1:0.1:100);
 % figure, mesh(X,Y,(X.*Y));
 % figure, mesh((X-Y));
 

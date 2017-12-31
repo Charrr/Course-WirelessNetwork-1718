@@ -1,7 +1,0 @@
-function [ Pb ] = erlangB(A, n)
-if n == O
-    Pb = l;   % P(O,A)=l
-else
-    Pb = l/(l + n/( A*erlangB(A, n-1) )) ; % use recursion "erlang(A, n-1)"
-end
-end
