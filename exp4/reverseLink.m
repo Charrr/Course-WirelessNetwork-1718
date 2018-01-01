@@ -30,4 +30,3 @@ histogram(SIR, -20:150, 'Facecolor', 'r');
 title(strcat('Histogram of SIR, N=', num2str(N), ' n=', num2str(n))); 
 xlabel('SIR(dB)'); ylabel('number of MS'); 
 end
-
