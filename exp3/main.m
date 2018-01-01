@@ -14,7 +14,7 @@ A_3 = linspace(13,120,50);
 
 %*****************************************
 
-% for each part, call the erlang_ b() function.
+% for each part, call the erlangB() function.
 
 %*****************************************
 
