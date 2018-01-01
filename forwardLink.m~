@@ -1,0 +1,28 @@
+function forwardLink( N, n )
+% Calculates the SIR in the forward link, and repeats it by randomly changing the position of the MS.
+%   Input: N - cluster size
+%          n - path loss exponent
+
+M = 100000; % 100000 trials.
+
+PosMSs = genPosition(M); % Generates random position of the user.
+PosCells = locateCells(N); % Locates the co-interference cells.
+
+% Distance between MS and BaseStation by -n power.
+ds = (abs(PosMSs)).^-n;
+ditemp1 = abs(PosMSs*(ones(18,1))'-ones(M,1)*PosCells'); 
+ditemp2 = ditemp1.^-n; 
+
+% Integrates the inteference. ***%
+di = ditemp2*ones(18,1); 
+
+%*** the SIR  ***%
+SIR = 10*log(ds./di); 
+
+%EverageSIR = SIR*ones(1,M)/M 
+hist(SIR, -20:250) 
+title('Histogram'); 
+xlabel('SIR(dB)'); 
+ylabel('numbers of MS');
+end
+

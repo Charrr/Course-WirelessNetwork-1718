@@ -5,21 +5,21 @@ n = input('the path loss exponent n = ');
 M = 100000;   % the times of simulation
  
 %*** call function to get the randomly lacation of the user ***%
-MSPos = genPosition(M); 
+PosMSs = genPosition(M); 
  
 %*** call function to get the lacation of 18 co-interference cells ***%
-CelLoc = AdjCel(N); 
+PosCells = locateCells(N); 
  
-pos=ones(18,M);
+pos = ones(18,M);
 for i=1:18
-    pos(i,:)=RandPOS(M);
+    pos(i,:)=genPosition(M);
 end
  
 %*** the location of inteference MS within inteference cell ***%
-IntMS = pos'+ones(M,1)*CelLoc'; 
+IntMS = pos'+ones(M,1)*PosCells'; 
  
 %*** ds is the '-n' power of the distance between MS and BaseStation ***%
-ds = (abs(MSPos)).^-n; 
+ds = (abs(PosMSs)).^-n; 
  
 %*** di is the '-n' power of the distance between inteference MS and BaseStation ***%
 ditemp = (abs(IntMS)).^-n; 

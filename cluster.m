@@ -17,4 +17,5 @@ if i == -1 || j == -1
     error('N cannot be divided into a pair of i,j');
 end
 
+display(i); display(j);
 end

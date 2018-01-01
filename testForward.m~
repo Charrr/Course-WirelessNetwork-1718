@@ -2,13 +2,13 @@
  
 N = input('the cluster size N = '); 
 n = input('the path loss exponent n = ');
-M = 100000;
+M = 100000;   % the times of simulation
 
 %*** call function to get the randomly lacation of the user ***%
-PosMSs = genPosition(M);
+PosMSs = genPosition(M); 
 
 %*** call function to get the lacation of 18 co-interference cells ***%
-PosCells = locateCells(N);
+PosCells = locateCells(N); 
 
 %*** ds is the '-n' power of the distance between MS and BaseStation ***%
 ds = (abs(PosMSs)).^-n; 
@@ -24,7 +24,7 @@ di = ditemp2*ones(18,1);
 SIR = 10*log(ds./di); 
 
 %EverageSIR = SIR*ones(1,M)/M 
-hist(SIR, -20:250) 
+hist(SIR,-20:250) 
 title('Histogram'); 
 xlabel('SIR(dB)'); 
 ylabel('numbers of MS');
