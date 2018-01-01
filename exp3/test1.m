@@ -2,7 +2,7 @@
 
 ns = [1,2,10:10:100];
 
-[X,Y] = meshgrid(ns, 0:1:1000);
+[X,Y] = meshgrid(ns, 0:0.1:100);
 
 [M,N] = size(X);
 Z = zeros(M,N);
@@ -23,6 +23,7 @@ for i = 1:N
 end
 xlabel('x: A'), ylabel('y: P_B'),
 legend(txtLegends);
+grid on;
 
 % Plot a 2D loglog graph with respect to A and PB
 figure,
