@@ -25,5 +25,5 @@ end
 
 LocCells(18) = LocCells(6)+LocCells(1);
 
-figure, scatter(real(LocCells),imag(LocCells),'filled'); title('Co-interference cells');
+% figure, scatter(real(LocCells),imag(LocCells),'filled'); title('Co-interference cells');
 end
