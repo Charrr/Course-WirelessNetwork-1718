@@ -5,7 +5,6 @@ function [z] = genPosition(m)
 %   Input: m - the number of MS to be generated.
 %   Output: z - the coordinates of the positions in complex numbers.
 
-
 % Firstly, let all points fall into a rectangular area.
 x = 1.5*rand(m,1)-1;
 y = sqrt(3)*rand(m,1)-0.5*sqrt(3);

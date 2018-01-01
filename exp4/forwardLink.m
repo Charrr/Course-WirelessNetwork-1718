@@ -7,8 +7,6 @@ ms = 100000; % 100000 trials.
 
 PosMSs = genPosition(ms); % Generates random position of the user.
 PosCells = locateCells(N); % Locates the co-interference cells.
-figure, scatter(real(PosMSs),imag(PosMSs),'filled'); title('Random positions');
-figure, scatter(real(PosCells),imag(PosCells),'filled'); title('Co-interference cells');
 
 % Distance between MS and BaseStation by -n'th power.
 ds = (abs(PosMSs)).^-n;
@@ -22,7 +20,8 @@ di = ditemp2*ones(18,1);
 SIR = 10*log(ds./di); 
 
 % Plot the histogram.
-figure, hist(SIR, -20:250); title('Histogram'); 
-xlabel('SIR(dB)'); ylabel('numbers of MS');
+histogram(SIR, -20:250, 'Facecolor', 'c');
+title(strcat('Histogram of SIR, N=', num2str(N), ' n=', num2str(n))); 
+xlabel('SIR(dB)'); ylabel('number of MS');
 end
 

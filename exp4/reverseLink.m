@@ -26,7 +26,8 @@ di = ditemp*ones(18,1);
 SIR = 10*log(ds./di); 
  
 % Plot the histogram.
-hist(SIR, -20:150); title('PDF of SIR'); 
-xlabel('SIR(dB)'); ylabel('PDF'); 
+histogram(SIR, -20:150, 'Facecolor', 'r');
+title(strcat('Histogram of SIR, N=', num2str(N), ' n=', num2str(n))); 
+xlabel('SIR(dB)'); ylabel('number of MS'); 
 end
 
